@@ -1,18 +1,24 @@
-#include <stdio.h>
+#include<stdio.h>
 
-// Function prototypes
-float add(float a, float b);
-float subtract(float a, float b);
+float add( float a, float b );
+float subtract( float a, float b );
 float multiply(float a, float b);
 float divide(float a, float b);
 int modulus(int a, int b);
 
-int main() {
-    float num1, num2;
+
+int main(){
+
+    float a;
+    float b;
     int choice;
-    
-    printf("Enter two numbers: ");
-    scanf("%f %f", &num1, &num2);
+
+    printf("Enter the value of First Number :");
+    scanf("%f",&a);
+    printf("Enter the value of Second Number :");
+    scanf("%f",&b);
+
+    for(int i=1; i<=5; i++){
 
     printf("Choose an operation:\n");
     printf("1. Addition\n");
@@ -25,37 +31,43 @@ int main() {
 
     switch (choice) {
         case 1:
-            printf("Result: %.2f\n", add(num1, num2));
-            break;
+                 printf("Addition is %f",add(  a, b ));
+                 break;
         case 2:
-            printf("Result: %.2f\n", subtract(num1, num2));
-            break;
-        case 3:
-            printf("Result: %.2f\n", multiply(num1, num2));
-            break;
+                 printf("Subtraction is %f",subtract(  a, b ));
+                 break;
+        case 3: 
+                  printf("Multiplication is %f",multiply(  a, b ));
+                  break;
         case 4:
-            if (num2 != 0)
-                printf("Result: %.2f\n", divide(num1, num2));
-            else
-                printf("Error: Division by zero is not allowed.\n");
-            break;
+                 if (b != 0)
+                    printf("Result: %f\n", divide(a, b));
+                 else
+                    printf("Error: (Division by zero is not allowed.)\n");
+                 break;
         case 5:
-            if ((int)num2 != 0)
-                printf("Result: %d\n", modulus((int)num1, (int)num2));
-            else
+                 if ((int)b != 0)
+                    printf("Result: %d\n", modulus((int)a, (int)b));
+                 else
                 printf("Error: Division by zero is not allowed.\n");
-            break;
+                 break;
         default:
-            printf("Invalid choice!\n");
-    }
+                 printf("Invalid choice!\n");
 
+    }
+                printf("\n\n");
+    }
+           
+            
+            
     return 0;
+
 }
 
-// Function definitions
-float add(float a, float b) {
+     float add(float a, float b) {
     return a + b;
 }
+
 
 float subtract(float a, float b) {
     return a - b;
